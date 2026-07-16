@@ -216,3 +216,27 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# ---------------------------------------------------------------------------
+# Project-specific (project-crack)
+# ---------------------------------------------------------------------------
+
+# Vendored JDK for the ARX headless driver — large (extracted ~346M, tarball
+# 198M > GitHub's 100MB per-file limit). Re-provision per machine: extract
+# arx/jdk21.tar.gz, or drop a JDK 21 at arx/jdk21/. Source, scripts and the ARX
+# .jar libraries are kept so ARX can still be run after setup.
+arx/jdk21/
+arx/jdk21.tar.gz
+
+# Compiled Java classes (rebuilt from arx/*.java)
+*.class
+
+# ctags indexes (e.g. tags, cra/tags)
+tags
+
+# codegraph MCP cache
+.codegraph/
+
+# Generated experiment outputs — regenerable from the scripts, not source
+out/
+tmp-out.csv

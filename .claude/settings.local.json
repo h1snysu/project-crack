@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(.venv/bin/python eval_cra.py --help)",
+      "Bash(.venv/bin/python run_sweep.py --help)",
+      "Bash(.venv/bin/python smoke_phase3.py)",
+      "Bash(.venv/bin/python smoke_phase3_solver.py)",
+      "Bash(.venv/bin/python smoke_phase3_cra.py)",
+      "Bash(.venv/bin/python run_sweep.py --files ../dataset/min1/anonymized_2qi_k3.csv ../dataset/min1/anonymized_2qi_k5.csv ../dataset/min1/anonymized_2qi_k8.csv ../dataset/min1/anonymized_3qi_k3.csv ../dataset/min1/anonymized_3qi_k5.csv ../dataset/min1/anonymized_3qi_k8.csv --hier-dir ../dataset/min1/hierarchies --out-csv /tmp/sweep23.csv --out-md /tmp/sweep23.md)",
+      "Read(//tmp/**)",
+      "Bash(.venv/bin/python -)",
+      "Bash(cra/.venv/bin/python -m defense.eq_injector --dataset dataset/min1/anonymized_2qi_k5.csv --hier-dir dataset/min1/hierarchies --qi-cols 'Age,Systolic Blood Pressure' --k 5 --list --only-compound)",
+      "Bash(cra/.venv/bin/python -m defense.eq_injector --dataset dataset/min1/anonymized_2qi_k5.csv --hier-dir dataset/min1/hierarchies --qi-cols 'Age,Systolic Blood Pressure' --k 5 --eq-index 79 --n 1 --out out/eqinj/anon_2qi_k5_eq79_plus1.csv)",
+      "Bash(cd *)"
+    ]
+  },
+  "enabledMcpjsonServers": [
+    "mis_mcp",
+    "codegraph"
+  ]
+}
